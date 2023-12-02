@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS + Tailwind</title>
   </head>
-  <body>
+  <body class="dark"> 
+    <!--
+      Setting the class name to "dark" addresses a current issue with radix-ui-themes 
+      where you can not simply apply the appearance setting in the Theme component.
+      https://github.com/radix-ui/themes/issues/22
+    -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
