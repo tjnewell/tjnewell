@@ -1,7 +1,7 @@
 import { Container, Link, Box, Text, Flex, Button } from '@radix-ui/themes';
 import { Routes, Route, Outlet, Link as RouterLink } from 'react-router-dom';
 import tj from './assets/tj-avatar.png';
-import { useState } from 'react';
+import { useTheme } from './components/theme-provider';
 
 export default function App() {
   return (
@@ -16,7 +16,7 @@ export default function App() {
 }
 
 function Page() {
-  const [time, setTime] = useState('light');
+  const { setTheme } = useTheme();
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-16">
@@ -42,10 +42,10 @@ function Page() {
           </Box>
           <Box width="400px">
             <Flex gap="6" direction="row" justify="center">
-              <Button size="4" onClick={() => setTime('light')}>
+              <Button size="4" onClick={() => setTheme('light')}>
                 Morning
               </Button>
-              <Button size="4" onClick={() => setTime('dark')}>
+              <Button size="4" onClick={() => setTheme('dark')}>
                 Evening
               </Button>
             </Flex>

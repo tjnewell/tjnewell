@@ -5,13 +5,16 @@ import App from './App.tsx';
 import './index.css';
 import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
+import { ThemeProvider } from './components/theme-provider.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Theme>
-        <App />
-      </Theme>
+      <ThemeProvider defaultTheme="light">
+        <Theme>
+          <App />
+        </Theme>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );
